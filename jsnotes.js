@@ -27,3 +27,10 @@ function addItem() {
 function removeItem() {
     console.log('teste');
 }
+
+function search(){
+    var input = document.getElementById("search").value.toUpperCase();
+
+    notes.forEach(function(element) {
+    }, this);
+}
