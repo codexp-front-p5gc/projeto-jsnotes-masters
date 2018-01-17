@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #e8e8e8;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+main {
+    padding: 20px;
+}
+
+.page-header {
+    background-color: #fb0;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.page-header .fa {
+    color: #4c4c4c;
+}
+
+ .page-header__logo {
+    text-transform: uppercase;
+ }
+
+.page-header__search-box {
+    display: inline-block;
+    position: relative;
+}
+
+.search-box__search {
+    background-color: #f5b400;
+    padding: 8px 5px 8px 25px;
+}
+
+
+.page-header .fa-search {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+}
+
+.page-header__icons {
+    display: none;
+}
+
+.box {
+    border: 1px solid #959595;
+    color: #959595;
+    border-radius: 5px;
+    padding: 20px 10px;
+    text-transform: uppercase;
+}
+
+.notes-input {
+    position: relative;
+}
+
+.notes-input__name, .notes-items__name {
+    background-color: #e8e8e8;
+    position: absolute;
+    top: -8px;
+    left: 10px;
+}
+
+.note-title {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.text-input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.notes-items {
+    margin-top: 20px;
+    position: relative;
+}
+
+.notes-items__btn {
+    padding: 2px 7px;
+    border: 1px solid #959595;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.items-list {
+    padding: 10px 0;
+}
+
+.items-list__input {
+    box-shadow: 3px 3px 5px #959595;
+    width: 85%;
+    margin: 5px 0;
+}
+
+.btn-remove {
+    margin-left: 8px;
+}
+
+.items-buttons {
+    text-align: right;
+}
+
+.btn {
+    background-color: #ffbb00;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #959595;
+    margin: 5px;
+    min-width: 135px;
+}
+
+@media (min-width: 375px) 
+{
+  .page-header__icons
+   {
+    display: inline-block;
+    text-align: right;
+   }
+}
