@@ -38,9 +38,29 @@ function removeItem() {
     console.log('teste');
 }
 
-function search(){
+function search() {
     var input = document.getElementById("search").value.toUpperCase();
 
-    notes.forEach(function(element) {
+    console.log(notes);
+
+    // for each
+    notes.forEach(function (element) {
+        var title = element.title.toUpperCase();
+
+        if (title.indexOf(input) > -1)
+            document.getElementById(element.id).style.display = "";
+        else
+            document.getElementById(element.id).style.display = "none";
+
     }, this);
+
+    // for
+    for (var i = 0; i < notes.length; i++) {
+        var title = notes[i].title.toUpperCase();
+
+        if (title.indexOf(input) > -1)
+            document.getElementById(notes[i].id).style.display = "";
+        else
+            document.getElementById(notes[i].id).style.display = "none";
+    }
 }
