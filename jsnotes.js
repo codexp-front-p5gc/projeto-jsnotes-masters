@@ -1,4 +1,14 @@
-var notes = [];
+var notes = [{
+        id: 1,
+        title: "test",
+        items: ["Fazer html", "Deixar responsivo"]
+    },
+    {
+        id: 2,
+        title: "Faça uma lista",
+        items: ["Para reorganizar a lista, arraste e solte os itens", "Assinale as tarefas concluídas", "Os itens assinados são movidos automaticamente para o fim da lista"]
+    }
+];
 
 function createElement(tag, text, classe, append) {
     var newElement = document.createElement(tag);
@@ -26,6 +36,7 @@ function addItem() {
 
 function removeItem() {
     console.log('teste');
+<<<<<<< HEAD
 }
 
 function search(){
@@ -33,4 +44,6 @@ function search(){
 
     notes.forEach(function(element) {
     }, this);
+=======
+>>>>>>> a31c585eddbcf0c9cda40657f1bd44ff18f45d0f
 }
