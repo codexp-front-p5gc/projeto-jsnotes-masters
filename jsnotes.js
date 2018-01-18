@@ -36,7 +36,6 @@ function addItem() {
 
 function removeItem() {
     console.log('teste');
-<<<<<<< HEAD
 }
 
 function search(){
@@ -44,6 +43,4 @@ function search(){
 
     notes.forEach(function(element) {
     }, this);
-=======
->>>>>>> a31c585eddbcf0c9cda40657f1bd44ff18f45d0f
 }
