@@ -1,5 +1,15 @@
-var notes = [];
 var counter = 0;
+var notes = [{
+        id: 1,
+        title: "test",
+        items: ["Fazer html", "Deixar responsivo"]
+    },
+    {
+        id: 2,
+        title: "Faça uma lista",
+        items: ["Para reorganizar a lista, arraste e solte os itens", "Assinale as tarefas concluídas", "Os itens assinados são movidos automaticamente para o fim da lista"]
+    }
+];
 
 function createElement(tag, text, classe, append) {
     var newElement = document.createElement(tag);
