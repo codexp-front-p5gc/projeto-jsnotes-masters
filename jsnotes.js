@@ -10,14 +10,14 @@ var notes = [{
     }
 ];
 
-function createElement(tag, text, classe, append) {
-    var newElement = document.createElement(tag);
-    var txtElement = document.createTextNode(text);
-    newElement.className += classe;
-    newElement.appendChild(txtElement);
-    append.appendChild(newElement);
-    return append;
-}
+// function createElement(tag, text, classe, append) {
+//     var newElement = document.createElement(tag);
+//     var txtElement = document.createTextNode(text);
+//     newElement.className += classe;
+//     newElement.appendChild(txtElement);
+//     append.appendChild(newElement);
+//     return append;
+// }
 
 function addItem() {
     var itemList = document.getElementById('items-list');
@@ -36,4 +36,32 @@ function addItem() {
 
 function removeItem() {
     console.log('teste');
+}
+
+function cadastroDOM()  {
+    var title = document.getElementById('note-input-title').value;
+    
+    var task = document.getElementsByClassName('items-list__input');
+    
+    var article = document.getElementById('post-it');
+
+    var newElement = document.createElement('h1');
+    var txtElement = document.createTextNode(title);
+    newElement.appendChild(txtElement);
+    article.appendChild(newElement);
+
+    
+
+
+    for (var i = 0; i < task.length; i++) {
+
+        console.log(task[i].value);    
+
+        var newElement = document.createElement('p');
+        var txtElement = document.createTextNode(task[i].value);
+        newElement.appendChild(txtElement);
+        article.appendChild(newElement);
+
+    }    
+    
 }
