@@ -39,7 +39,6 @@ function addItem() {
 }
 
 function removeItem() {
-    console.log('teste');
     var itemList = document.getElementById('items-list');
     var item = document.getElementById('item-' + event.target.name);
     var btn = document.getElementById('btn-' + event.target.name);
@@ -72,4 +71,6 @@ function search() {
         else
             document.getElementById(notes[i].id).style.display = "none";
     }
+
 }
+
