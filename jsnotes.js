@@ -1,4 +1,3 @@
-var counter = 0;
 var counterPostit = 0;
 var notes = [{
     id: 1,
@@ -13,27 +12,34 @@ var notes = [{
 ];
 
 function addItem(el) {
-    counter++;
     var itemList = el;
     var newElement = document.createElement('input');
     newElement.className += 'text-input items-list__input';
-    newElement.id = 'item-' + counter;
     itemList.appendChild(newElement);
 
     var newElement = document.createElement('button');
     var txtElement = document.createTextNode('-');
     newElement.className += 'notes-items__btn btn-remove';
-    newElement.id = 'btn-' + counter;
-    newElement.name = counter;
     newElement.onclick = removeItem;
     newElement.appendChild(txtElement);
     itemList.appendChild(newElement);
 }
 
 const removeItem = function (el) {
-    var itemList = el.toElement.previousElementSibling.parentElement;
-    itemList.removeChild(el.toElement.previousElementSibling);
-    itemList.removeChild(el.toElement);
+    var itemList, btn, input;
+    itemList = el.toElement ? el.toElement.previousElementSibling.parentElement : document.getElementById('items-list');
+
+    if (el.toElement) {
+        itemList = el.toElement.previousElementSibling.parentElement;
+        input = el.toElement.previousElementSibling;
+        btn = el.toElement;
+    }else {
+        itemList = document.getElementById('items-list');
+        input = el;
+        btn = el.nextElementSibling;
+    }
+    itemList.removeChild(input);
+    itemList.removeChild(btn);
 }
 
 const clearAll = () => {
