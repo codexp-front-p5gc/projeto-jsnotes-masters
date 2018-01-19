@@ -1,9 +1,10 @@
 var counter = 0;
+var counterPostit = 0;
 var notes = [{
-        id: 1,
-        title: "test",
-        items: ["Fazer html", "Deixar responsivo"]
-    },
+    id: 1,
+    title: "test",
+    items: ["Fazer html", "Deixar responsivo"]
+},
     {
         id: 2,
         title: "Faça uma lista",
@@ -11,14 +12,14 @@ var notes = [{
     }
 ];
 
-function createElement(tag, text, classe, append) {
-    var newElement = document.createElement(tag);
-    var txtElement = document.createTextNode(text);
-    newElement.className += classe;
-    newElement.appendChild(txtElement);
-    append.appendChild(newElement);
-    return append;
-}
+// function createElement(tag, text, classe, append) {
+//     var newElement = document.createElement(tag);
+//     var txtElement = document.createTextNode(text);
+//     newElement.className += classe;
+//     newElement.appendChild(txtElement);
+//     append.appendChild(newElement);
+//     return append;
+// }
 
 function addItem() {
     counter++;
@@ -46,24 +47,24 @@ function removeItem() {
     itemList.removeChild(btn);
 }
 
-function search() {
-    var input = document.getElementById("search").value.toUpperCase();
+// function search() {
+//     var input = document.getElementById("search").value.toUpperCase();
 
-    console.log(notes);
+//     console.log(notes);
 
-    // for each
-    notes.forEach(function (element) {
-        var title = element.title.toUpperCase();
+//     // for each
+//     notes.forEach(function (element) {
+//         var title = element.title.toUpperCase();
 
-        var element = document.getElementById(`item-${element.id}`);
+//         var element = document.getElementById(`item-${element.id}`);
 
-        if (element != null) {
-            if (title.indexOf(input) > -1)
-                element.style.display = "";
-            else
-                element.style.display = "none";
-        }
-    }, this);
+//         if (element != null) {
+//             if (title.indexOf(input) > -1)
+//                 element.style.display = "";
+//             else
+//                 element.style.display = "none";
+//         }
+//     }, this);
 
     // for
     // for (var i = 0; i < notes.length; i++) {
@@ -74,4 +75,40 @@ function search() {
     //     else
     //         document.getElementById(notes[i].id).style.display = "none";
     // }
+
+function cadastroDOM() {
+    counterPostit++;
+    var note = {
+        id: counterPostit,
+        items: []
+    };
+    var title = document.getElementById('note-input-title').value;
+    note.title = title;
+
+    var task = document.getElementsByClassName('items-list__input');
+
+    var article = document.getElementById('post-it');
+
+    var newArticle = document.createElement('article');
+    newArticle.id = 'post-it-' + note.id;
+    newArticle.className = 'post-it';
+
+    var newElement = document.createElement('h1');
+    var txtElement = document.createTextNode(title);
+    newElement.appendChild(txtElement);
+    newArticle.appendChild(newElement);
+
+    for (var i = 0; i < task.length; i++) {
+
+        console.log(task[i].value);
+        note.items.push(task[i].value);
+        var newElement = document.createElement('p');
+        var txtElement = document.createTextNode(task[i].value);
+        newElement.appendChild(txtElement);
+        newArticle.appendChild(newElement);
+
+    }
+    article.appendChild(newArticle);
+    notes.push(note);
+    console.log(notes);
 }

@@ -148,6 +148,13 @@ main {
     min-width: 135px;
 }
 
+.post-it {
+    background-color: #b7feff;
+    padding: 20px;
+    margin: 20px 10px;
+    display: inline-block;
+}
+
 @media (min-width: 375px) 
 {
   /* .page-header__icons

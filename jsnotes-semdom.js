@@ -35,12 +35,13 @@ const validateItems = (obj) => {
 };
 
 const createPostIt = (obj) => {
-    let template = `<h1>${obj.title}</h1>`;
+    let template = `<div class="post-it"><h1>${obj.title}</h1>`;
 
     Object.values(obj.items).forEach(item => {
         template += `<p>${item.value}</p>`;
     });
 
-    console.log(template);
-    document.body.appendChild(template);
+    template += `</div>`;
+
+    document.getElementById('post-it').innerHTML = template;
 }
