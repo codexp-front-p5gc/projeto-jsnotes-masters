@@ -12,15 +12,6 @@ var notes = [{
     }
 ];
 
-// function createElement(tag, text, classe, append) {
-//     var newElement = document.createElement(tag);
-//     var txtElement = document.createTextNode(text);
-//     newElement.className += classe;
-//     newElement.appendChild(txtElement);
-//     append.appendChild(newElement);
-//     return append;
-// }
-
 function addItem() {
     counter++;
     var itemList = document.getElementById('items-list');
@@ -34,17 +25,14 @@ function addItem() {
     newElement.className += 'notes-items__btn btn-remove';
     newElement.id = 'btn-' + counter;
     newElement.name = counter;
-    newElement.addEventListener("click", removeItem);
+    newElement.onclick = removeItem;
     newElement.appendChild(txtElement);
     itemList.appendChild(newElement);
 }
 
-function removeItem() {
-    var itemList = document.getElementById('items-list');
-    var item = document.getElementById('item-' + event.target.name);
-    var btn = document.getElementById('btn-' + event.target.name);
-    itemList.removeChild(item);
-    itemList.removeChild(btn);
+const removeItem = function (el) {
+    itemList.removeChild(el.toElement.previousElementSibling);
+    itemList.removeChild(el.toElement);
 }
 
 function cadastroDOM() {
