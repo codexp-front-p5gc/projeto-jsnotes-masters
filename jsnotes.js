@@ -42,6 +42,18 @@ const removeItem = function (el) {
     itemList.removeChild(btn);
 }
 
+const clearAll = () => {
+    console.log("clicked");
+    document.getElementById('note-input-title').value = "";
+    const elements = document.querySelectorAll('.items-list__input');
+
+    for (let i=0; i < elements.length; i++) {
+        console.log(elements[i]);
+        removeItem(elements[i]);
+    }
+    
+}
+
 function search() {
     var input = document.getElementById("search").value.toUpperCase();
 
@@ -106,5 +118,55 @@ function cadastroDOM() {
     }
     article.appendChild(newArticle);
     notes.push(note);
-    console.log(notes);
+    clearAll();
+}
+
+
+console.log("initialize");
+
+document.querySelector("#register").addEventListener("click", () => {
+    console.log("clicked");
+    
+    const obj = {};
+    obj.title = document.getElementById('note-input-title').value;
+    obj.items = document.querySelectorAll('.items-list__input');
+    // console.log(obj);
+
+    const appendObj = validateItems(obj);
+
+    if(appendObj) {
+        createPostIt(obj);
+    }
+});
+
+const validateItems = (obj) => {
+
+    let empty = 0;
+
+    Object.values(obj.items).forEach(item => {
+        if(item.value.trim().length === 0) {
+            empty += 1;
+        }
+    });
+
+    if(empty !== 0 || !obj.title) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
+const createPostIt = (obj) => {
+    let template = `<div class="post-it"><h1>${obj.title}</h1>`;
+
+    Object.values(obj.items).forEach(item => {
+        template += `<p>${item.value}</p>`;
+    });
+
+    template += `</div>`;
+
+    const el = document.getElementById('post-it').innerHTML;
+    document.getElementById('post-it').innerHTML = el + template;
+    clearAll();
+    
 }

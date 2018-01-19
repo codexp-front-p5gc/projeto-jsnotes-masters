@@ -6,14 +6,12 @@ document.querySelector("#register").addEventListener("click", () => {
     const obj = {};
     obj.title = document.getElementById('note-input-title').value;
     obj.items = document.querySelectorAll('.items-list__input');
-    console.log(obj);
+    // console.log(obj);
 
     const appendObj = validateItems(obj);
 
     if(appendObj) {
         createPostIt(obj);
-    } else {
-
     }
 });
 
@@ -43,5 +41,6 @@ const createPostIt = (obj) => {
 
     template += `</div>`;
 
-    document.getElementById('post-it').innerHTML = template;
+    const el = document.getElementById('post-it').innerHTML;
+    document.getElementById('post-it').innerHTML = el + template;
 }
