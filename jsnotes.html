@@ -13,11 +13,11 @@
 
 <body>
     <header class="page-header">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="page-header__burguer fa fa-bars" aria-hidden="true"></i>
         <span class="page-header__logo">JS Notes</span>
         <div class="page-header__search-box">
             <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" id="search" class="search-box__search" onkeyup="search()" placeholder="PESQUISAR">
+            <input type="text" id="search" class="search-box__search" onkeyup="search(this.value,this.parentNode.parentElement.nextElementSibling.lastElementChild.firstElementChild)" placeholder="PESQUISAR">
         </div>
         <div class="page-header__icons">
             <i class="fa fa-repeat" aria-hidden="true"></i>
@@ -44,7 +44,13 @@
             </section>
         </section>
         <section>
+<<<<<<< HEAD
             <article id="post-it">
+=======
+            <article>
+                <div id="item-1" style="border:2px solid blue; width:50px">teste</div>
+                <div id="item-2" style="border:2px solid blue; width:50px">Faça uma lista</div>
+>>>>>>> search
             </article>
         </section>
     </main>
