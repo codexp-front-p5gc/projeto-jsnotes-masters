@@ -46,22 +46,24 @@ function removeItem() {
     itemList.removeChild(btn);
 }
 
-function search() {
-    var input = document.getElementById("search").value.toUpperCase();
-
+function search(search) {
+    // var input = document.getElementById("search").value.toUpperCase();
+    var input = search.toUpperCase();
     console.log(notes);
 
     // for each
     notes.forEach(function (element) {
         var title = element.title.toUpperCase();
 
-        var element = document.getElementById(`item-${element.id}`);
+        var item = document.getElementById(`item-${element.id}`);
+        // this.parentNode.parentElement.nextElementSibling.lastElementChild.firstElementChild
+        // var item = article.getElementById(`item-${element.id}`);
 
-        if (element != null) {
+        if (item != null) {
             if (title.indexOf(input) > -1)
-                element.style.display = "";
+                item.style.display = "";
             else
-                element.style.display = "none";
+                item.style.display = "none";
         }
     }, this);
 
