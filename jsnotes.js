@@ -45,3 +45,33 @@ function removeItem() {
     itemList.removeChild(item);
     itemList.removeChild(btn);
 }
+
+function search() {
+    var input = document.getElementById("search").value.toUpperCase();
+
+    console.log(notes);
+
+    // for each
+    notes.forEach(function (element) {
+        var title = element.title.toUpperCase();
+
+        var element = document.getElementById(`item-${element.id}`);
+
+        if (element != null) {
+            if (title.indexOf(input) > -1)
+                element.style.display = "";
+            else
+                element.style.display = "none";
+        }
+    }, this);
+
+    // for
+    // for (var i = 0; i < notes.length; i++) {
+    //     var title = notes[i].title.toUpperCase();
+
+    //     if (title.indexOf(input) > -1)
+    //         document.getElementById(notes[i].id).style.display = "";
+    //     else
+    //         document.getElementById(notes[i].id).style.display = "none";
+    // }
+}
