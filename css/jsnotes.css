@@ -44,6 +44,8 @@ main {
 }
 
 .page-header {
+    display: flex;
+    flex-direction: row;
     background-color: #fb0;
     padding: 15px;
     font-size: 16px;
@@ -58,8 +60,7 @@ main {
  }
 
 .page-header__search-box {
-    display: inline-block;
-    position: relative;
+    display: flex;
 }
 
 .search-box__search {
@@ -75,7 +76,7 @@ main {
 }
 
 .page-header__icons {
-    display: none;
+    /* display: none; */
 }
 
 .box {
@@ -156,9 +157,14 @@ main {
 
 @media (min-width: 375px) 
 {
-  .page-header__icons
+  /* .page-header__icons
    {
-    display: inline-block;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
    }
+
+   .page-header__icons {
+       display: flex;
+       flex-direction: row;
+   } */
 }
