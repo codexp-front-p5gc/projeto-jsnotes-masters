@@ -12,9 +12,9 @@ var notes = [{
     }
 ];
 
-function addItem() {
+function addItem(el) {
     counter++;
-    var itemList = document.getElementById('items-list');
+    var itemList = el;
     var newElement = document.createElement('input');
     newElement.className += 'text-input items-list__input';
     newElement.id = 'item-' + counter;
@@ -31,6 +31,7 @@ function addItem() {
 }
 
 const removeItem = function (el) {
+    var itemList = el.toElement.previousElementSibling.parentElement;
     itemList.removeChild(el.toElement.previousElementSibling);
     itemList.removeChild(el.toElement);
 }
