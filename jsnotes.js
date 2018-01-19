@@ -53,7 +53,7 @@ const clearAll = () => {
     }
 }
 
-function search() {
+function search(search) {
     // var input = document.getElementById("search").value.toUpperCase();
     var input = search.toUpperCase();
     console.log(notes);
