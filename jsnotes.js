@@ -53,24 +53,27 @@ const clearAll = () => {
     }
     
 }
-// function search() {
-//     var input = document.getElementById("search").value.toUpperCase();
 
-//     console.log(notes);
 
-//     // for each
-//     notes.forEach(function (element) {
-//         var title = element.title.toUpperCase();
+function search() {
+    var input = document.getElementById("search").value.toUpperCase();
 
-//         var element = document.getElementById(`item-${element.id}`);
+    console.log(notes);
 
-//         if (element != null) {
-//             if (title.indexOf(input) > -1)
-//                 element.style.display = "";
-//             else
-//                 element.style.display = "none";
-//         }
-//     }, this);
+    // for each
+    notes.forEach(function (element) {
+        var title = element.title.toUpperCase();
+
+        var element = document.getElementById(`item-${element.id}`);
+
+        if (element != null) {
+            if (title.indexOf(input) > -1)
+                element.style.display = "";
+            else
+                element.style.display = "none";
+        }
+    }, this);
+}
 
     // for
     // for (var i = 0; i < notes.length; i++) {
@@ -117,4 +120,54 @@ function cadastroDOM() {
     article.appendChild(newArticle);
     notes.push(note);
     console.log(notes);
+}
+
+
+console.log("initialize");
+
+document.querySelector("#register").addEventListener("click", () => {
+    console.log("clicked");
+    
+    const obj = {};
+    obj.title = document.getElementById('note-input-title').value;
+    obj.items = document.querySelectorAll('.items-list__input');
+    // console.log(obj);
+
+    const appendObj = validateItems(obj);
+
+    if(appendObj) {
+        createPostIt(obj);
+    }
+});
+
+const validateItems = (obj) => {
+
+    let empty = 0;
+
+    Object.values(obj.items).forEach(item => {
+        if(item.value.trim().length === 0) {
+            empty += 1;
+        }
+    });
+
+    if(empty !== 0 || !obj.title) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
+const createPostIt = (obj) => {
+    let template = `<div class="post-it"><h1>${obj.title}</h1>`;
+
+    Object.values(obj.items).forEach(item => {
+        template += `<p>${item.value}</p>`;
+    });
+
+    template += `</div>`;
+
+    const el = document.getElementById('post-it').innerHTML;
+    document.getElementById('post-it').innerHTML = el + template;
+    clearAll();
+    
 }

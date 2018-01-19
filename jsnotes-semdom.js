@@ -1,7 +1,7 @@
 console.log("initialize");
 
 document.querySelector("#register").addEventListener("click", () => {
-    // console.log("clicked");
+    console.log("clicked");
     
     const obj = {};
     obj.title = document.getElementById('note-input-title').value;
@@ -12,8 +12,6 @@ document.querySelector("#register").addEventListener("click", () => {
 
     if(appendObj) {
         createPostIt(obj);
-    } else {
-
     }
 });
 
@@ -43,5 +41,6 @@ const createPostIt = (obj) => {
 
     template += `</div>`;
 
-    document.getElementById('post-it').innerHTML = template;
+    const el = document.getElementById('post-it').innerHTML;
+    document.getElementById('post-it').innerHTML = el + template;
 }
