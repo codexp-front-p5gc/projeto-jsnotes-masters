@@ -42,26 +42,26 @@ const removeItem = function (el) {
     itemList.removeChild(btn);
 }
 
-// function search() {
-//     var input = document.getElementById("search").value.toUpperCase();
+function search() {
+    var input = document.getElementById("search").value.toUpperCase();
 
-//     console.log(notes);
+    console.log(notes);
 
-//     // for each
-//     notes.forEach(function (element) {
-//         var title = element.title.toUpperCase();
+    // for each
+    notes.forEach(function (element) {
+        var title = element.title.toUpperCase();
 
-//         var element = document.getElementById(`item-${element.id}`);
+        var element = document.getElementById(`item-${element.id}`);
 
-//         if (element != null) {
-//             if (title.indexOf(input) > -1)
-//                 element.style.display = "";
-//             else
-//                 element.style.display = "none";
-//         }
-//     }, this);
+        if (element != null) {
+            if (title.indexOf(input) > -1)
+                element.style.display = "";
+            else
+                element.style.display = "none";
+        }
+    }, this);
 
-    // for
+    //for
     // for (var i = 0; i < notes.length; i++) {
     //     var title = notes[i].title.toUpperCase();
 
@@ -70,6 +70,7 @@ const removeItem = function (el) {
     //     else
     //         document.getElementById(notes[i].id).style.display = "none";
     // }
+}
 
 function cadastroDOM() {
     counterPostit++;
