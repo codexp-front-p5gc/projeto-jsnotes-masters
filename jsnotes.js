@@ -47,6 +47,17 @@ function removeItem() {
     itemList.removeChild(btn);
 }
 
+const clearAll = () => {
+    console.log("clicked");
+    document.getElementById('note-input-title').value = "";
+    const elements = document.querySelectorAll('.items-list__input');
+
+    for (let i=0; i < elements.length; i++) {
+        console.log(elements[i]);
+        removeItem(elements[i]);
+    }
+    
+}
 // function search() {
 //     var input = document.getElementById("search").value.toUpperCase();
 

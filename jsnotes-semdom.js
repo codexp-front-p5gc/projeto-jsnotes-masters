@@ -1,12 +1,12 @@
 console.log("initialize");
 
 document.querySelector("#register").addEventListener("click", () => {
-    console.log("clicked");
+    // console.log("clicked");
     
     const obj = {};
     obj.title = document.getElementById('note-input-title').value;
     obj.items = document.querySelectorAll('.items-list__input');
-    console.log(obj);
+    // console.log(obj);
 
     const appendObj = validateItems(obj);
 
