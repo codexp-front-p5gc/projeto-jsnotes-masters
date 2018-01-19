@@ -63,7 +63,7 @@ function search() {
     notes.forEach(function (element) {
         var title = element.title.toUpperCase();
 
-        var element = document.getElementById(`item-${element.id}`);
+        var element = document.getElementById(`post-it-${element.id}`);
 
         if (element != null) {
             if (title.indexOf(input) > -1)
@@ -126,10 +126,14 @@ console.log("initialize");
 
 document.querySelector("#register").addEventListener("click", () => {
     console.log("clicked");
+    counterPostit++;
     
     const obj = {};
     obj.title = document.getElementById('note-input-title').value;
     obj.items = document.querySelectorAll('.items-list__input');
+    obj.id = counterPostit;
+
+    notes.push(obj);
     // console.log(obj);
 
     const appendObj = validateItems(obj);
@@ -157,7 +161,7 @@ const validateItems = (obj) => {
 };
 
 const createPostIt = (obj) => {
-    let template = `<div class="post-it"><h1>${obj.title}</h1>`;
+    let template = `<div class="post-it" id="post-it-${obj.id}"><h1>${obj.title}</h1>`;
 
     Object.values(obj.items).forEach(item => {
         template += `<p>${item.value}</p>`;
