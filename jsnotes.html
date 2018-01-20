@@ -27,12 +27,12 @@
         </div>
     </header>
     <main>
-        <section class="box notes-input">
-            <p class="notes-input__name">Cadastro de notas</p>
+        <fieldset class="box notes-input">
+            <legend>Cadastro de notas</legend>
             <label for="notes-input" class="note-title">Título</label>
             <input type="text" id="note-input-title" class="note-input-title text-input">
-            <section class="box notes-items">
-                <p class="notes-items__name">Itens</p>
+            <fieldset class="box notes-items">
+                <legend >Itens</legend>
                 <button class="notes-items__btn" onclick="addItem(this.nextElementSibling)">+</button>
                 <div class="items-list" id="items-list">
                 </div>
@@ -41,8 +41,8 @@
                     <button class="btn" onclick="cadastroDOM()">Cadastrar c/ DOM</button>
                     <button class="btn" onclick="clearAll()">Limpar</button>
                 </div>
-            </section>
-        </section>
+            </fieldset>
+        </fieldset>
         <section>
 
             <article id="post-it">
