@@ -58,6 +58,11 @@ table {
     box-sizing: inherit;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 body {
     background-color: #e8e8e8;
     font-family: 'Fira Sans', sans-serif;
@@ -191,6 +196,18 @@ main {
     padding: 20px;
     margin: 20px 10px;
     display: inline-block;
+    width: 200px;
+    -webkit-box-shadow: -2px 2px 4px 0px rgba(99,99,99,1);
+    -moz-box-shadow: -2px 2px 4px 0px rgba(99,99,99,1);
+    box-shadow: -2px 2px 4px 0px rgba(99,99,99,1);
+}
+
+.post-it h1{
+    font-size: 1.5rem;
+}
+
+.post-it p{
+    margin: 10px 0 10px 15px;
 }
 
 @media (min-width: 375px) 
